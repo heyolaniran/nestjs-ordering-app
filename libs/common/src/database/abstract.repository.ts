@@ -6,6 +6,7 @@ import {
   UpdateQuery,
   SaveOptions,
   Connection,
+  Document
 } from 'mongoose';
 import { AbstractDocument } from './abstract.schema';
 
