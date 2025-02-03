@@ -16,6 +16,12 @@ services:
       - /usr/src/app/node_modules
     ports: 
       - 3000:3000
+    develop:
+       watch:
+         - path: ./apps/orders
+           action: sync
+           target: .
+    
   mongodb-primary:
       image: docker.io/bitnami/mongodb:5.0
       environment:
