@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN yarn install 
+RUN yarn install --legacy-peer-deps
 
 COPY . . 
 
@@ -18,12 +18,12 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /usr/src/app 
 
-COPY package*.json ./ 
+COPY package*.json ./
 
-RUN npm install --only=production 
+RUN npm install --only=production --legacy-peer-deps
 
 COPY . . 
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD ["node", "dist/apps/orders/main"]
+CMD ["node", "dist/apps/billing/main"]
